@@ -34,7 +34,7 @@ ok(defined($ainfo) and ref $ainfo eq 'Net::addrinfo');
 
 $hint = new Net::addrinfo(flags => AI_CANONNAME);
 
-$ainfo = getaddrinfo("mail.marzot.net", "mail", $hint);
+$ainfo = getaddrinfo("mail.marzot.net", "smtp", $hint);
 ok(defined($ainfo) and ref $ainfo eq 'Net::addrinfo');
 
 $hint = new Net::addrinfo(flags => AI_NUMERICHOST);
@@ -65,3 +65,4 @@ ok(defined($ainfo) and not ref($ainfo) and $ainfo == EAI_SOCKTYPE);
 $hint = new Net::addrinfo(flags => AI_CANONNAME);
 $ainfo = getaddrinfo(undef, "www", $hint);
 ok(defined($ainfo) and not ref($ainfo) and $ainfo == EAI_BADFLAGS);
+
